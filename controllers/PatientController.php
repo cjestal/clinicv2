@@ -54,7 +54,7 @@ class PatientController extends Controller
     public function actionView($id)
     {
         $searchModelTransaction = new TransactionsSearch();
-        $dataProviderTransaction = $searchModelTransaction->search(['Patient_id' => $id]);
+        $dataProviderTransaction = $searchModelTransaction->search(['TransactionsSearch' => ['Patient_id' => $id]]);
         return $this->render('view', [
             'model' => $this->findModel($id),
             'searchModel' => $searchModelTransaction,
